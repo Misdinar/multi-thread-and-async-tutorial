@@ -26,7 +26,7 @@ def getGoPackage(msg, num):
 
         #Get text from a tag
         link = hasil.find_all('a')
-        url_hasil_search = "https://pkg.go.dev/" + link[0].get('href')
+        url_hasil_search = "https://pkg.go.dev" + link[0].get('href')
         
         print("Hasil {}\nkegunaan package: {}\nUrl: {}\n\n".format(total, text, url_hasil_search))
         total+=1
@@ -42,7 +42,7 @@ def getGoBlog(msg):
 
     #Get href with beautifulsoup in class SearchSnippet
     judul = SearchSnippet[0].find_all('a')
-    url_hasil_search = "https://pkg.go.dev/" + judul[0].get('href')
+    url_hasil_search = "https://pkg.go.dev" + judul[0].get('href')
     soup = get_soup(url_hasil_search)
 
     #Get value with beautifoulsoup in class Documentation-indexList
@@ -61,7 +61,7 @@ def getGoBlog(msg):
     return True
 
 def main():   
-    getGoPackage("sort", 30)
+    # getGoPackage("sort", 30)
     getGoBlog("llrb+petar")
 
 if __name__ == '__main__':

@@ -17,7 +17,7 @@ def query(num):
     n1 = random.randint(1, 99000)
     n2 = random.randint(1, 1000)
     mod = "length(FirstNameLastName)"
-    sql = "select count(*) from MOCKDATA where (ID>={} AND ID<={})   = {};".format(n1, n1+n2, mod, num)
+    sql = "select count(*) from MOCKDATA where (ID>={} AND ID<={}) AND {} % 3 = {};".format(n1, n1+n2, mod, num)
     cur.execute(sql)
     value = int(cur.fetchone()[0])
     
